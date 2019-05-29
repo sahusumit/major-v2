@@ -1,0 +1,218 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, viewport-fit=cover">
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+
+	<!-- Page Title -->
+	<title>MedicalChain Using BlockChain</title>
+  <% include partials/scripts.ejs %>
+	</head>
+<body class="slides noPreload animated">
+		
+<!-- SVG Library -->
+
+
+<!-- Navigation -->
+<nav class="side ">
+  <div class="navigation">
+    <ul></ul>
+  </div>
+</nav>
+
+<!-- Panel Top #library/panel/panel-top-01.html -->
+<nav class="panel top  ">
+  <div class="sections desktop">
+    <div class="left"><a href="/" title="Slides Framework"><h3>Home</h3></a></div>
+    <div class="right">
+      <% if(!user) { %>
+        <ul class="menu">
+            <li><a href="/network/blockchain">BLOCKCHAIN</a></li>
+            <li><a href="/login">Login</a></li>
+            <li><a href="/signup">SignUp</a></li>
+          </ul>
+      <% } else { %>
+        <ul class="menu">
+            <li><a href="/network/blockchain">BLOCKCHAIN</a></li>
+          </ul>
+          <a class="button blue gradient" href="/profile">Profile</a> 
+      <% } %>
+    </div>
+  </div>
+  <div class="sections compact hidden">
+    <div class="left"><a href="#" title="Slides Framework"><svg style="width:82px;height:24px"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logo"></use></svg></a></div>
+    <div class="right"><span class="button actionButton sidebarTrigger" data-sidebar-id="1"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#menu"></use></svg></span></div>
+  </div>
+</nav>
+
+<!-- Sidebar -->
+<nav class="sidebar" data-sidebar-id="1">
+  <div class="close"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#close"></use></svg></div>
+  <div class="content">
+    <a href="#" class="logo"><svg width="37" height="30"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logo-icon"></use></svg></a>
+    <ul class="mainMenu margin-top-3">
+       <ul class="menu">
+       
+        <li><a href="/login">Login</a></li>
+        <li><a href="/signup">SignUp</a></li>
+      </ul>
+    </ul>
+    <ul class="subMenu small opacity-8">
+     <li><a href="/network/blockchain">BLOCKCHAIN</a></li>
+     <a class="button blue gradient" href="/profile">Profile</a> 
+    </ul>
+    <ul class="social opacity-8">
+      <li><a href="#"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#facebook"></use></svg></a></li>
+      <li><a href="#"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter"></use></svg></a></li>
+      <li><a href="#"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#instagram"></use></svg></a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- Slide 1 (#03) -->
+<section class="slide fade-6 kenBurns">
+  <div class="content">
+    <div class="container">
+      <div class="wrap">
+      
+        <div class="fix-7-12">
+          <div class="fix-3-12">
+            <svg height="77" class="wide ae-1 fromCenter"><h1>MedicalChain</h1></svg>
+          </div>
+          <p class="ae-2 hero cropBottom margin-top-3"><span class="opacity-8">BlockChain A New Technology In Medical Science</span></p>
+        </div>
+          
+      </div>
+    </div>
+  </div>
+  <div class="background" style="background-image:url(assets/img/background/img-03.jpg)"></div>
+</section>
+
+<!-- Slide 2 (#07) -->
+<section class="slide fade-6 kenBurns">
+  <div class="content">
+    <div class="container">
+      <div class="wrap">
+
+        <div class="fix-11-12">
+          <h1 class="cropBottom ae-1 fromCenter">
+            Slides Framework
+            <span class="button play small white popupTrigger button-7" data-popup-id="7">
+              <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#play"></use></svg>
+            </span>
+            Built to impress
+          </h1>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <div class="background" style="background-image:url(assets/img/background/img-07.jpg)"></div>
+</section>
+
+<!-- Popup Video -->
+<div class="popup autoplay" data-popup-id="7">
+  <div class="close"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#close"></use></svg></div>
+  <div class="content">
+    <div class="container">
+      <div class="wrap">
+        <div class="fix-10-12">
+          <div class="embedVideo popupContent">
+            <iframe src="https://www.youtube.com/embed/g8yBqxTiHSs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Slide 3 (#01) -->
+<section class="slide fade-6 kenBurns">
+  <div class="content">
+    <div class="container">
+      <div class="wrap">
+        
+        <div class="fix-3-12">
+          <svg height="77" class="wide ae-1 fromCenter"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logo"></use></svg>
+        </div>
+          
+      </div>
+    </div>
+  </div>
+  <div class="background" style="background-image:url(assets/img/background/img-01.jpg)"></div>
+</section>
+
+<!-- Slide 4 (#08) -->
+<section class="slide fade-6 kenBurns">
+  <div class="content">
+    <div class="container">
+      <div class="wrap">
+      
+        <div class="fix-12-12">
+          <div class="fix-3-12">
+            <svg height="77" class="wide ae-1 fromCenter"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logo"></use></svg>
+          </div>
+          <p class="hero fix-9-12 margin-top-2 ae-2"><span class="opacity-8">Perfection is achieved, not when there is nothing more to add, but when there is nothing left to take&nbsp;away.</span></p>
+          <div class="margin-top-2">
+            <p class="ae-3"><span class="opacity-8">Start now and get <b>free bonus</b> on account</span></p>
+            <form class="slides-form" action="#">
+              <input type="email" class="input-8 ae-4 fromCenter" name="user-email" placeholder="Email" val=""/>
+              <input type="password" class="input-8 ae-5 fromCenter" name="user-password" placeholder="Password" val=""/>
+              <input type="password" class="input-8 ae-6 fromCenter" name="confirm-password" placeholder="Confirm the password" val=""/>
+              <button type="submit" class="button blue gradient ae-7 fromCenter" name="button">Get Started</button>
+            </form>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+  <div class="background" style="background-image:url(assets/img/background/img-08.jpg)"></div>
+</section>
+
+<!-- Slide 5 (#04) -->
+<section class="slide fade-6 kenBurns">
+  <div class="content">
+    <div class="container">
+      <div class="wrap">
+
+        <div class="fix-5-12">
+          <div class="fix-3-12">
+            <svg height="77" class="wide ae-1 fromCenter"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logo"></use></svg>
+          </div>
+          <div class="videoThumbnail shadow rounded ae-4 fromCenter margin-top-6 popupTrigger" data-popup-id="4">
+            <img src="assets/img/video-4.jpg" alt="Video Thumbnail"/>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <div class="background" style="background-image:url(assets/img/background/img-04.jpg)"></div>
+</section>
+
+<!-- Popup Video -->
+<div class="popup autoplay" data-popup-id="4">
+  <div class="close"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#close"></use></svg></div>
+  <div class="content">
+    <div class="container">
+      <div class="wrap">
+        <div class="fix-10-12">
+          <div class="embedVideo popupContent">
+            <iframe src="https://www.youtube.com/embed/g8yBqxTiHSs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--  -->
+<section class="slide fade-6 kenBurns">
+  <% include partials/footer.ejs %>
+</section>
+
+
+</body>
+</html>

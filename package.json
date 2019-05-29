@@ -1,0 +1,30 @@
+{
+  "name": "login",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "node_1": "nodemon app.js 3000 http://localhost:3000",
+    "node_2": "nodemon app.js 3001 http://localhost:3001",
+    "node_3": "nodemon app.js 3002 http://localhost:3002"
+  },
+  "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
+    "body-parser": "~1.18.2",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.6.9",
+    "ejs": "~2.5.7",
+    "express": "~4.15.5",
+    "express-session": "^1.15.6",
+    "mongoose": "^5.0.13",
+    "morgan": "~1.9.0",
+    "nodemon": "^1.19.0",
+    "npm": "^6.9.0",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0",
+    "request": "^2.88.0",
+    "request-promise": "^4.2.4",
+    "serve-favicon": "~2.4.5",
+    "sha256": "^0.2.0",
+    "uuid": "^3.3.2"
+  }
+}

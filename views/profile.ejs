@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Welcome</title>
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <% include partials/scripts.ejs %>
+
+  <style>
+     * {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  color: black
+}
+
+/* Float four columns side by side */
+.column {
+  float: left;
+  width: 50%;
+  padding: 0 10px;
+}
+
+
+/* Remove extra left and right margins, due to padding in columns */
+.row {margin-top: 4px; }
+
+.row1 {margin-top: 70px; }
+
+
+
+/* Clear floats after the columns */
+
+/* Style the counter cards */
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
+  padding: 16px;
+  text-align: left;
+  background-color: #f1f1f1;
+  height: 40vh;
+}
+
+/* Responsive columns - one column layout (vertical) on small screens */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+    
+  }
+}
+      </style>
+
+
+</head>
+<body>
+
+  <!-- Navigation -->
+<nav class="side ">
+    <div class="navigation">
+      <ul></ul>
+    </div>
+  </nav>
+  
+  <!-- Panel Top #library/panel/panel-top-01.html -->
+  <nav class="panel top  ">
+    <div class="sections desktop">
+      <div class="left"><a href="/" title="Slides Framework"><h3>Home</h3></a></div>
+      <div class="right">
+        <% if(!user) { %>
+          <ul class="menu">
+              <li><a href="/network/blockchain">BLOCKCHAIN</a></li>
+              <li><a href="/login">Login</a></li>
+              <li><a href="/signup">SignUp</a></li>
+            </ul>
+        <% } else { %>
+          <ul class="menu">
+              
+                  
+                
+              <li><a class="btn secondary white btn-lg" href="/network/add">Add data to the blockchain</a>
+              <li><a class="btn secondary white btn-lg" href="/update">Update</a></li>
+              <li><a class="btn secondary white btn-lg" href="/logout">Logout</a>
+              <li><a href="/network/blockchain">BLOCKCHAIN</a></li>
+            </ul>
+            <a class="button blue gradient" href="/profile">Welcome, <%= user.username %></a> 
+        <% } %>
+      </div>
+    </div>
+    <div class="sections compact hidden">
+      <div class="left"><a href="#" title="Slides Framework"><svg style="width:82px;height:24px"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logo"></use></svg></a></div>
+      <div class="right"><span class="button actionButton sidebarTrigger" data-sidebar-id="1"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#menu"></use></svg></span></div>
+    </div>
+  </nav>
+  
+  <!-- Sidebar -->
+  <nav class="sidebar" data-sidebar-id="1">
+    <div class="close"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#close"></use></svg></div>
+    <div class="content">
+      <a href="#" class="logo"><svg width="37" height="30"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logo-icon"></use></svg></a>
+      <ul class="mainMenu margin-top-3">
+         <ul class="menu">
+         
+          <li><a href="/login">Login</a></li>
+          <li><a href="/signup">SignUp</a></li>
+        </ul>
+      </ul>
+      <ul class="subMenu small opacity-8">
+       <li><a href="/network/blockchain">BLOCKCHAIN</a></li>
+       <a class="button blue gradient" href="/profile">Profile</a> 
+      </ul>
+      <ul class="social opacity-8">
+        <li><a href="#"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#facebook"></use></svg></a></li>
+        <li><a href="#"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter"></use></svg></a></li>
+        <li><a href="#"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#instagram"></use></svg></a></li>
+      </ul>
+    </div>
+  </nav>
+  
+
+
+  <!-- personal Details  -->
+
+  <div class= container>
+      <div class="row1">
+          <div class="column">
+            <div class="card">
+                <h3>
+                    <b>Personal Details:</b>
+                </h3>
+
+                <div class="container">
+                    <label>Full Name:</label> 
+                      <% if(user) { %>
+                        <%= user.username %>
+                      <% } else { %>
+                        <%= "-" %>
+                      <% } %>
+                    </br>
+                    <label>Mobile No:</label>
+                        <%= user.mobileno %>
+                    </br>
+                    <label>Date of birth:</label>
+                    <%= user.dateofbirth %>
+                    </br> 
+                    <label>Address:</label>
+                    <%= user.address %>
+                    </br>
+                    <label>Patient Id:</label> <%= user.id %>
+                    </br>
+                    <label>Sex:</label>
+                    <%= user.sex %>
+                    </br>
+                    <label>Emergency Contact:</label>
+                    <%= user.emergency %>
+                    </br>
+                  </div>
+            </div>
+          </div>
+          <div class="column">
+            <div class="card">
+                <h3>
+                    <b>Health Details:</b>
+                </h3>
+
+                <div class="container">
+                    <label>Blood Group:</label>
+                    <%= user.bloodgroup %> 
+                    </br>
+                    <label>List of Allergies('NKA' if not known):</label>
+                    <%= user.allergies %>
+                    </br>
+                    <label>BMI:</label>
+                    <%= user.bmi %>
+                    </br>
+                    <label>Significant Accidents:</label>
+                    <%= user.accidents %>
+                    </br>
+                    <label>Medical History:</label>
+                    <%= user.history %>
+                    </br>
+                  </div>
+            </div>
+          </div>
+          
+        </div>
+
+           
+         
+  
+        
+    <div class = "container">
+         <div class ="row1" style="text-align: center">
+              <div class="col" style="padding: 20px">
+            <h1 style="text-decoration-style: double">DISEASE</h1>
+         </div>
+         <div>
+        
+     
+    <div class="row">
+      
+      <% if(user.diseases.length>=1) { %>
+        <% user.diseases.forEach(function(disease) { %>
+          <!-- <div class="container"> -->
+              <div class="row">
+              <div class="card"  style="width: 15rem; padding: 4px" >
+                  <div class="card-body">
+                      <h5 class="card-title">
+          
+              <p> <%= disease.title %> </p>
+                      </h5>
+              <a class="btn btn-primary" href="/<%= disease.title %>/view">View</a> 
+              </div>
+            </div>
+          </div>
+        <% }) %>
+      <% }else { %>
+        <p>No diseases added yet</p>
+      <% } %>
+
+      
+    </div>
+      <div class="row">
+    <a class="btn btn-primary" href="/disease">Add a disease</a>
+     </div>
+          
+        </div>
+</body>
+</html>
+

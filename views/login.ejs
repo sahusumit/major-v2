@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Login</title>
+    <% include partials/scripts.ejs %>
+</head>
+
+<body  class="slides noPreload animated">
+  <!-- Navbaar -->
+
+  <nav class="side ">
+    <div class="navigation">
+      <ul></ul>
+    </div>
+  </nav>
+  
+  <!-- Panel Top #library/panel/panel-top-01.html -->
+  <nav class="panel top  ">
+    <div class="sections desktop">
+      <div class="left"><a href="/" title="Slides Framework"><h3>Home</h3></a></div>
+      <div class="right">
+        <ul class="menu">
+          <li><a href="/network/blockchain">BLOCKCHAIN</a></li>
+          <li><a href="/login">Login</a></li>
+          <li><a href="/signup">SignUp</a></li>
+        </ul>
+        <a class="button blue gradient" href="/profile">Profile</a> 
+      </div>
+    </div>
+    <div class="sections compact hidden">
+      <div class="left"><a href="#" title="Slides Framework"><svg style="width:82px;height:24px"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logo"></use></svg></a></div>
+      <div class="right"><span class="button actionButton sidebarTrigger" data-sidebar-id="1"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#menu"></use></svg></span></div>
+    </div>
+  </nav>
+  
+  <!-- Sidebar -->
+  <nav class="sidebar" data-sidebar-id="1">
+    <div class="close"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#close"></use></svg></div>
+    <div class="content">
+      <a href="#" class="logo"><svg width="37" height="30"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logo-icon"></use></svg></a>
+      <ul class="mainMenu margin-top-3">
+         <ul class="menu">
+         
+          <li><a href="/login">Login</a></li>
+          <li><a href="/signup">SignUp</a></li>
+        </ul>
+      </ul>
+      <ul class="subMenu small opacity-8">
+       <li><a href="/network/blockchain">BLOCKCHAIN</a></li>
+       <a class="button blue gradient" href="/profile">Profile</a> 
+      </ul>
+      <ul class="social opacity-8">
+        <li><a href="#"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#facebook"></use></svg></a></li>
+        <li><a href="#"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter"></use></svg></a></li>
+        <li><a href="#"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#instagram"></use></svg></a></li>
+      </ul>
+    </div>
+  </nav>
+
+
+<!-- Login -->
+        
+
+    <!-- <div class="card-body">
+        <form action="/auth/login"  method="post">
+            <div class="input-group form-group">
+                <div class="input-group-prepend">
+                    	<span class="input-group-text"><i class="fas fa-user"></i></span>
+						</div>
+                        <input type="text" class="form-control" name="username" placeholder="Email ID" width="150px">
+					</div>
+					<div class="input-group form-group">
+						<div class="input-group-prepend">
+							<span class="input-group-text"><i class="fas fa-key"></i></span>
+						</div>
+						<input type="password" class="form-control" name="password" placeholder="Password">
+					</div>
+					<div class="row align-items-center remember">
+						<input type="checkbox">Remember me
+					</div>
+					<div class="form-group">
+						<input type="submit" value="Login" class="btn float-right login_btn">
+                    </div>
+                    
+				</form>
+            </div>
+
+            <div class="card-footer">
+                    <div class="d-flex justify-content-center links">
+                        Don't have an account?<a href="/signup">Sign Up</a>
+                    </div>
+                    
+                </div> -->
+        
+
+
+<!-- ------------------------new------------------- -->
+
+<section class="slide fade-6 kenBurns">
+  <div class="content">
+    <div class="container">
+      <div class="wrap">
+      
+        <div class="fix-12-12">
+          <div class="fix-3-12">
+            <svg height="77" class="wide ae-1 fromCenter"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logo"></use></svg>
+          </div>
+          <h1 class="hero fix-9-12 margin-top-2 ae-2"><span class="opacity-8">Login</span></h1>
+          <div class="margin-top-2">
+            <p class="ae-3"><span class="opacity-8">Start now and get <b>your</b> medical details</span></p>
+            <form  class="slides-form" action="/auth/login"  method="post">
+              <input type="email" class="input-8 ae-4 fromCenter" name="username" placeholder="Enter Email Id" val=""/>
+              <input type="password" class="input-8 ae-5 fromCenter" name="password" placeholder="Enter the Password" val=""/>
+                <button type="submit" value ="login" class="button blue gradient ae-7 fromCenter" name="button">Submit</button>
+            </form>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+  <div class="background" style="background-image:url(assets/img/background/img-08.jpg)"></div>
+</section>
+
+</body>
+
+</html>

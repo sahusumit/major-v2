@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Signup</title>
+    <% include partials/scripts.ejs %>
+</head>
+
+<body>
+    <div class="jumbotron jumbotron-fluid primary white">
+        <div class="container text-center">
+            <h1 class="display-4">
+                Add a disease
+            </h1>
+        </div>
+    </div>
+    <div class="container">
+        <form action="/users/disease" class="col-md-5" method="post">
+            <div class="form-group">
+                <label for="">Title :</label>
+                <input autofocus class="form-control" type="text" name="title">
+            </div>
+            <div class="form-group">
+                <label for="">Health Issue : </label>
+                <textarea class="form-control" name="healthissue"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="">Response to medication : </label>
+                <textarea class="form-control" name="response"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="">Consulting Doctor : </label>
+                <textarea class="form-control" name="doctor"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="">Medications used : </label>
+                <textarea class="form-control" name="medication"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="">Hospital or Clinic Info : </label>
+                <textarea class="form-control" name="hospital"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="">Status : </label>
+                <textarea class="form-control" name="status"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="">Tests : </label>
+                <textarea class="form-control" name="tests"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="">Treatment : </label>
+                <textarea class="form-control" name="treatment"></textarea>
+            </div>
+            <input type="submit" value="Submit" class="btn secondary white">
+            
+        </form>
+    </div>
+</body>
+
+</html>
