@@ -5,91 +5,176 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Signup</title>
-    <% include partials/scripts.ejs %>
+    <title>BlockChain</title>
+    
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <% include partials/scripts.ejs %>
+
+  <style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  color: black;
+  background-image: url(/assets/img/background/profile3.jpg);
+  background-repeat: repeat;
+  background-attachment: fixed;
+  background-position: center;
+}
+
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: #111;
+}
+
+.active {
+  background-color: #4CAF50;
+}
+
+/* chain */
+.row1 {margin-top: 30px; }
+
+</style>
 </head>
 
+
 <body>
-    <div class="jumbotron jumbotron-fluid primary white">
-        <div class="container text-center">
-            <h1 class="display-4">
-                BLOCKCHAIN
-            </h1>
-            <a class="btn secondary white btn-lg" href="/">Home</a>
-            <a class="btn secondary white btn-lg" href="/profile">Profile</a>
-        </div>
-    </div>
 
 
-
-
-    <div class="col">
-        <div class="row">
-    
-    
-        <div>
-                
-                <% chain.chain.forEach(function(block) { %>
-                <div class="chain">
-                        <h2 class="font-family">CHAIN </h2>
-    
-                    <p>
-                        Index: <%= block.index %>
-                    </p>
-                    <p>
-                        Timestamp: <%= block.timestamp %>
-                    </p>
-                    <p>
-                        Nonce : <%= block.nonce %>
-                    </p>
-                    <p>
-                        Hash : <%= block.hash %>
-                    </p>			
-                    <p>
-                        Previous Block Hash : <%= block.previousBlockHash %>
-                    </p>
-                    <div>
-                        <p>
-                            Transactions:
-                        </p>
-                        <div>
-                                <% if(block.transactions.length>0) { %> 
-                                    <% block.transactions.forEach(function(transaction) { %>
+              
+              <!-- Panel Top #library/panel/panel-top-01.html -->
             
-                                        <p class="patient1">
-                                            Patient Info: 
-                                            
-                                                
-                                                    <p class="patient2">
-                                                    Id: <%= transaction.data.id %>
-                                    
-                                                    </p>
-                                                    <p class="patient2">
-                                                    Hash: <%= transaction.data.hash %>
-                                    
-                                                    </p>
-                                             
-                                        </p>
-                                        <p class="patient1">
-                                           Transaction Id: <%= transaction.transactionId %>
-                                        </p>
-            
-                                    <% }) %>
-                                <% } %>
-                        </div>
-                    </div>
+              <nav class="panel top " style="background:white;">
+                <div class="sections desktop" >
+                  
+                  <div class="right" >
+                      <ul class="menu">
+                          <li><a href="/" title="Slides Framework"><h4>Home</h4></a></li>
+                          <li><a href="/network/blockchain"><b>BLOCKCHAIN</b></a></li>
+                          <li><a class= "button red gradient" style="float:right"href="/logout"><b>Logout</b></a></li>
+                        </ul>
+                  </div>
                 </div>
-                <% }) %>
+              </nav>
         
-        </div>
+              
+              <div class ="row1" style="text-align: center">
+                    <div class="col" style="padding: 20px">
+                  <h1 style="text-decoration-style: double">CHAIN</h1>
+               </div>
+            </div>
+
+      
+    
+     <div class="row">
+          
+
+              <% chain.chain.forEach(function(block) { %>
+
+                <div class="row" style="padding-top: 10px">
+                        <div class="card"  style="width: 20rem; padding: 4px; 
+                         background-color:transparent; color:black;"  >
+                            <div class="card-body">
+                                <h5 class="card-title">
+                    
+                                  
+   
+  
+                    
+                                    <p>
+                                        Index: <%= block.index %>
+                                    </p>
+                                    <p>
+                                        Timestamp: <%= block.timestamp %>
+                                    </p>
+                                    <p>
+                                        Nonce : <%= block.nonce %>
+                                    </p>
+                                    <p>
+                                        Hash : <%= block.hash %>
+                                    </p>			
+                                    <p>
+                                        Previous Block Hash : <%= block.previousBlockHash %>
+                                    </p>
+                                    <div>
+                                        <p>
+                                            Transactions:
+                                        </p>
+                                        <div>
+                                            <% if(block.transactions.length>0) { %> 
+                                            <% block.transactions.forEach(function(transaction) { %>
+                                
+                                            <p class="patient1">
+                                                Patient Info: 
+                                                                
+                                                                    
+                                            <p class="patient2">
+                                                Id: <%= transaction.data.id %>
+                                                        
+                                            </p>
+                                            <p class="patient2">
+                                                Hash: <%= transaction.data.hash %>
+                                            </p>
+                                            </p>
+                                            <p class="patient1">
+                                                Transaction Id: <%= transaction.transactionId %>
+                                            </p>
+                                
+                                                <% }) %>
+                                                <% } %>
+    
+                                        </div>
+                                    </div>
+                                    </h5>
+                                </div>
+                              </div>
+                            </div>
+                <% }) %>
+     </div>
+      
         
         <div class="pending-chain">
-                <h2 class="font-family"> PENDING TRANSACTIONS </h2>
-                <% if(chain.pendingTransactions.length>0) { %>
-                    <p class="patient1">
-                        List:
-                    </p>
+
+                <div class ="row1" style="text-align: center">
+                        <div class="col" style="padding: 20px">
+                      <h1 style="text-decoration-style: double">PENDING TRANSACTIONS</h1>
+                   </div>
+                </div>
+                
+                <div class="row">
+
+                <% if(chain.pendingTransactions.length>0) { %> 
                     <% chain.pendingTransactions.forEach(function(trans) {  %>
+
+                        <div class="row" style="padding-top: 10px">
+                                <div class="card"  style="width: 20rem; padding: 4px "  >
+                                    <div class="card-body">
+                                        <h5 class="card-title">
                            
                     <% for (var prop in trans.data) { %>
                         <p>
@@ -100,15 +185,23 @@
                         <p>
                                 Transaction id: <%= trans.transactionId %>
                         </p>
+                    </h5>
+                </div>
+              </div>
+            </div>
                     <% }) %>
-
-                    
-                <% } else { %>
+                
+              
+                <% } 
+                
+                else { %>
                     <span>Empty</span>
-                <% } %> 
-        </div>
-        </div>
+                <% } %>
+           
+</div>
+    
         
+
         <div>
                 <h2 class="font-family"> CURRENT NODE URL </h2>
                 <%= chain.currentNodeUrl %>
@@ -130,7 +223,7 @@
         </div>
     
     </div>
-    
+</div> 
 
         <form action="/network/mine" method="get">
             <h3>
@@ -150,7 +243,7 @@
             </button>
         </form>
     
- 
+   
         
 
 

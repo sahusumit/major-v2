@@ -19,7 +19,12 @@
 
 body {
   font-family: Arial, Helvetica, sans-serif;
-  color: black
+  padding-top:50px;
+  color: black;
+  background-image: url(/assets/img/background/profile3.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
 }
 
 /* Float four columns side by side */
@@ -42,11 +47,12 @@ body {
 /* Style the counter cards */
 
 .card {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.9); /* this adds the "card" effect */
   padding: 16px;
   text-align: left;
-  background-color: #f1f1f1;
-  height: 40vh;
+  background-color: rgba(0, 0, 0, 0.7);
+  height: 42vh;
+  color : white;
 }
 
 /* Responsive columns - one column layout (vertical) on small screens */
@@ -72,7 +78,7 @@ body {
   </nav>
   
   <!-- Panel Top #library/panel/panel-top-01.html -->
-  <nav class="panel top  ">
+  <nav class="panel top " style="background:white">
     <div class="sections desktop">
       <div class="left"><a href="/" title="Slides Framework"><h3>Home</h3></a></div>
       <div class="right">
@@ -87,10 +93,10 @@ body {
               
                   
                 
-              <li><a class="btn secondary white btn-lg" href="/network/add">Add data to the blockchain</a>
-              <li><a class="btn secondary white btn-lg" href="/update">Update</a></li>
-              <li><a class="btn secondary white btn-lg" href="/logout">Logout</a>
-              <li><a href="/network/blockchain">BLOCKCHAIN</a></li>
+              <li><a  href="/network/add"><b>Add data to the blockchain</b></a></li>
+              <li><a href="/network/blockchain"><b>BLOCKCHAIN</b></a></li>
+              <li><a  class= "button red gradient" href="/logout"><b>Logout</b></a></li>
+              
             </ul>
             <a class="button blue gradient" href="/profile">Welcome, <%= user.username %></a> 
         <% } %>
@@ -188,6 +194,9 @@ body {
                     <label>Medical History:</label>
                     <%= user.history %>
                     </br>
+                    
+                    <li><a class="btn secondary blue btn-sm" href="/update">Update</a></li>
+                  
                   </div>
             </div>
           </div>
@@ -206,19 +215,21 @@ body {
          <div>
         
      
-    <div class="row">
+   <div class="row">
       
       <% if(user.diseases.length>=1) { %>
         <% user.diseases.forEach(function(disease) { %>
           <!-- <div class="container"> -->
               <div class="row">
-              <div class="card"  style="width: 15rem; padding: 4px" >
+              <div class="card"  style="width: 15rem; height: 10rem; padding: 4px" >
                   <div class="card-body">
                       <h5 class="card-title">
           
-              <p> <%= disease.title %> </p>
+                <p> <%= disease.title %> </p>
                       </h5>
+              <div>
               <a class="btn btn-primary" href="/<%= disease.title %>/view">View</a> 
+            </div>
               </div>
             </div>
           </div>
