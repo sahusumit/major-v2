@@ -24,14 +24,19 @@ router.get('/add',loggedin, function(req,res) {
             return res.send(500, { error: err });
           }
 
+        var simpleCrypto = new SimpleCrypto(doc.secretkey);     
+
         const data = JSON.stringify(doc);
         const hash = sha256(data);
-        
+        const encryptedData = simpleCrypto.encrypt(data);   
         var obj = {
             id,
             hash,
+            encryptedData,      
             timestamp:Date.now()
         };
+
+
     
         var options = {
             uri: chain.currentNodeUrl+'/consensus',
