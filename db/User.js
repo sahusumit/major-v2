@@ -12,6 +12,7 @@ var userSchema = new schema({
         type: String,
         required: true,
     },
+    secretkey:String,
     fullname: String,
     mobileno: Number,
     address: String,
