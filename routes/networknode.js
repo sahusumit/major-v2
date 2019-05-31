@@ -6,6 +6,7 @@ const sha256 = require('sha256');
 const chain = new Blockchain();
 var express = require('express');
 var router = express.Router();
+var SimpleCrypto = require("simple-crypto-js").default;
 
 var loggedin = function (req, res, next) {
     if (req.isAuthenticated()) {
@@ -14,7 +15,45 @@ var loggedin = function (req, res, next) {
       res.redirect('/login')
     }
 };
+
+router.get('/verify',loggedin,function(req,res) {
+
+    var chainCopy = chain;
+    var revChain = chainCopy.chain.reverse();
+    
+    revChain.forEach(function(block) {
+
+        if(block.transactions.length>0) {
+            block.transactions.forEach(function(trans) {
  
+                const id = trans.data.id;
+                if(id.toString()==req.user.id.toString()) {
+
+                    const user = req.user;
+                    User.findById(id,function(err,doc) {
+                        if(err) {
+                            return res.send(500, { error: err });
+                          }
+
+                          var simpleCrypto = new SimpleCrypto(doc.secretkey);
+      
+                          const cipherText = trans.data.encryptedData;
+      
+                          var decipherText = simpleCrypto.decrypt(cipherText);
+      
+                          console.log('text ',decipherText);
+
+                          
+      
+                          return   res.send('verified');
+                    });
+                }
+            });
+        }
+    });
+
+}); 
+
 router.get('/add',loggedin, function(req,res) {
 
     const id = req.user.id;
