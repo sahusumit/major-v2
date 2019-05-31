@@ -1,5 +1,7 @@
 var express = require('express');
 var router = express.Router();
+var SimpleCrypto = require("simple-crypto-js").default;     
+var _secretKey = SimpleCrypto.generateRandom(256);  
 var User = require('../db/User');
 
 /* GET home page. */
@@ -21,6 +23,7 @@ module.exports = function (passport) {
                 } else {
                     var record = new User()
                     record.username = username;
+                    record.secretkey = _secretKey;
                     record.password = record.hashPassword(password)
                     record.save(function (err, user) {
                         if (err) {
